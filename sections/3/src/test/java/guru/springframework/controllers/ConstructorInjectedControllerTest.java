@@ -4,11 +4,10 @@ import guru.springframework.services.GreetingServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 
+import org.springframework.stereotype.Controller;
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by jt on 5/24/17.
- */
+@Controller
 public class ConstructorInjectedControllerTest {
     private ConstructorInjectedController constructorInjectedController;
 
