@@ -7,25 +7,10 @@ import org.springframework.stereotype.Controller;
  */
 @Controller
 public class MyController {
-  private String test;
 
     public String hello(){
         System.out.println("Hello!!! ");
 
         return "foo";
-  }
-
-  /**
-   * @return the test
-   */
-  public String getTest() {
-    return test;
-  }
-
-  /**
-   * @param test the test to set
-   */
-  public void setTest(String test) {
-    this.test = test;
-  }
+    }
 }
