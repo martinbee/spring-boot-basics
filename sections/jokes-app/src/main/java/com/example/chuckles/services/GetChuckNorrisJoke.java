@@ -1,5 +1,6 @@
-package main.java.com.example.chuckles.services;
+package com.example.chuckles.services;
 
+import com.example.chuckles.services.JokeGetter;
 import org.springframework.stereotype.Service;
 import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 

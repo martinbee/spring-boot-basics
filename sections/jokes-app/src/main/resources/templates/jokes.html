@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Jokes App</title>
+</head>
+<body>
+<h1>Joke List</h1>
+
+<ul th:each="joke : ${jokes}">
+  <li th:text="${joke}">joke</li>
+</ul>
+
+</body>
+</html>
+
