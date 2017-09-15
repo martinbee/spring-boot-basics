@@ -6,9 +6,16 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 
 @Service
 public class GetChuckNorrisJoke implements JokeGetter {
-  public String getJoke() {
-    ChuckNorrisQuotes chuckNorrisQuotes = new ChuckNorrisQuotes();
+  private final ChuckNorrisQuotes chuckNorrisQuotes;
 
+  /**
+  * @param chuckNorrisQuotes
+  */
+  public GetChuckNorrisJoke() {
+    this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+  }
+
+  public String getJoke() {
     return chuckNorrisQuotes.getRandomQuote();
   }
 }

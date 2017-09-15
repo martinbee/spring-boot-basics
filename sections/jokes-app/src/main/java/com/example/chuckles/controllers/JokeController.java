@@ -1,7 +1,6 @@
 package com.example.chuckles.controllers;
 
-import com.example.chuckles.model.Joke;
-import com.example.chuckles.services.GetChuckNorrisJoke;
+import com.example.chuckles.services.JokeGetter;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,18 +8,18 @@ import org.springframework.ui.Model;
 
 @Controller
 public class JokeController {
-  private GetChuckNorrisJoke getChuckNorrisJokeService;
+  private JokeGetter jokeService;
 
   /**
-  * @param getChuckNorrisJokeService
+  * @param jokeService
   */
-  public JokeController(GetChuckNorrisJoke getChuckNorrisJokeService) {
-    this.getChuckNorrisJokeService = getChuckNorrisJokeService;
+  public JokeController(JokeGetter jokeService) {
+    this.jokeService = jokeService;
   }
 
   @RequestMapping("/joke")
   public String getJoke(Model model) {
-    String joke = getChuckNorrisJokeService.getJoke();
+    String joke = jokeService.getJoke();
 
     model.addAttribute("joke", joke);
 

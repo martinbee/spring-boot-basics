@@ -8,6 +8,15 @@ import guru.springframework.norris.chuck.ChuckNorrisQuotes;
 
 @Service
 public class GetJokes implements JokesGetter {
+  private final ChuckNorrisQuotes chuckNorrisQuotes;
+
+  /**
+  * @param chuckNorrisQuotes
+  */
+  public GetJokes() {
+    this.chuckNorrisQuotes = new ChuckNorrisQuotes();
+  }
+
   public List<String> getJokes() {
     ChuckNorrisQuotes chuckNorrisQuotes = new ChuckNorrisQuotes();
     List<String> jokes = new ArrayList<String>();

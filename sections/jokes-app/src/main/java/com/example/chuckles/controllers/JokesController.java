@@ -1,24 +1,24 @@
 package com.example.chuckles.controllers;
 
-import com.example.chuckles.services.GetJokes;
+import com.example.chuckles.services.JokesGetter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
 @Controller
 public class JokesController {
-  private GetJokes getJokesService;
+  private JokesGetter jokesService;
 
   /**
-  * @param getJokesService
+  * @param jokesService
   */
-  public JokesController(GetJokes getJokesService) {
-    this.getJokesService = getJokesService;
+  public JokesController(JokesGetter jokesService) {
+    this.jokesService = jokesService;
   }
 
   @RequestMapping("/jokes")
   public String getJokes(Model model) {
-    model.addAttribute("jokes", getJokesService.getJokes());
+    model.addAttribute("jokes", jokesService.getJokes());
 
     return "jokes";
   }
